@@ -1,0 +1,1095 @@
+/* ------------------------------------ */
+/* Base Reset                           */
+/* ------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------ */
+/* Global Styles                        */
+/* ------------------------------------ */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #2e2e2e;
+  background-color: #e0f7fa; /* light baby blue */
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ------------------------------------ */
+/* Translucent Navbar                   */
+/* ------------------------------------ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #9b59b6;
+}
+
+/* Hamburger (Mobile) */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #222;
+}
+
+/* ------------------------------------ */
+/* Hero Section (static image)          */
+/* ------------------------------------ */
+.hero {
+  position: relative;
+  padding: 290px 10% 80px;
+  text-align: center;
+  color: #fff;
+  margin-top: 60px; /* offset fixed navbar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-panel {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 3rem 4rem;
+  max-width: 1050px;    /* increased width */
+  width: 90%;           /* caps width at 90% on smaller screens */
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #2e2e2e;
+  margin: 0 auto;       /* center horizontally */
+}
+
+.text-panel h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #000000; /* strong contrast */
+}
+
+.text-panel p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.text-panel .btn {
+  background-color: #89c9d3; /* baby-blue accent */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.text-panel .btn:hover {
+  background-color: #6aaeb7; /* slightly darker on hover */
+}
+
+/* End Hero → Text-Panel Styles */
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Force hero paragraph to pure white */
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #ffffff; /* pure white */
+}
+
+/* ------------------------------------ */
+/* Button Base Styles (General)         */
+/* ------------------------------------ */
+.btn {
+  background-color: #89c9d3;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 2px solid #749aa0;
+}
+
+.btn:hover {
+  background: #6aaeb7;
+  border: none;
+}
+
+/* ------------------------------------ */
+/* “What We Do” Section                 */
+/* ------------------------------------ */
+#services {
+  padding: 80px 10%;
+  background-color: #e0f7fa; /* light baby blue */
+  text-align: center;
+}
+
+#services .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2e2e2e;
+}
+
+/* Card Container */
+.service-cards {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Individual Service Card */
+.service-card {
+  position: relative;
+  flex: 1 1 280px;
+  max-width: 320px;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* Overlay with Title + Hidden Detail (only for the top “Services” cards) */
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.service-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.service-overlay .service-detail {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+}
+
+/* On hover or focus reveal the detail line */
+.service-card:hover .service-overlay,
+.service-card:focus .service-overlay {
+  background: rgba(0,0,0,0.6);
+}
+
+.service-card:hover .service-overlay .service-detail,
+.service-card:focus .service-overlay .service-detail {
+  max-height: 100px;
+  opacity: 1;
+}
+
+/* Responsive tweaks for “What We Do” */
+@media (max-width: 768px) {
+  .service-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* ------------------------------------ */
+/* Testimonials Section                 */
+/* ------------------------------------ */
+#testimonials {
+  padding: 80px 10%;
+  background-color: #e0f7fa; /* light baby blue */
+  text-align: center;
+}
+
+#testimonials .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2e2e2e;
+}
+
+/* Cards Container */
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Individual Testimonial Card */
+.testimonial-card {
+  background-color: #fff;
+  max-width: 300px;
+  flex: 1 1 260px;
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Hover Lift Effect */
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Mobile Compact for Testimonials */
+@media (max-width: 768px) {
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #testimonials .section-title {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-card {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
+/* ------------------------------------ */
+/* Footer                                */
+/* ------------------------------------ */
+footer {
+  text-align: center;
+  padding: 40px 10%;
+  background-color: #e0f7fa; /* light baby blue */
+}
+
+/* ------------------------------------ */
+/* Responsive Styles                     */
+/* ------------------------------------ */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hero {
+    padding-top: 100px;
+  }
+}
+
+/* ------------------------------------ */
+/* Hero text glow animation              */
+/* ------------------------------------ */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(159,200,215, 0.5), 0 0 10px rgba(159,200,215, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(159,200,215, 1), 0 0 25px rgba(159,200,215, 0.7);
+  }
+}
+
+.hero .hero-content h2,
+.hero .hero-content p {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+/* ------------------------------------ */
+/* BOOK-SERVICES (horizontal scroll)     */
+/* ------------------------------------ */
+/* Note: In your HTML, change the <h2> inside #book-services to “Book With Us Now!” */
+#book-services {
+  position: relative;
+  padding: 80px 0 40px;       /* vertical spacing */
+  background-color: #e0f7fa;  /* light baby blue */
+}
+
+#book-services .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2e2e2e;
+  text-align: center;
+}
+
+/* ------------------------------------------- */
+/* 1) DESKTOP (≥ 769px) – flex‐row, capped card */
+/* ------------------------------------------- */
+#book-services .service-cards.scrollable {
+  display: flex;            /* flex container: cards line up in a row */
+  flex-wrap: nowrap;        /* no wrapping by default */
+  overflow-x: auto;         /* enable horizontal scroll if too many cards */
+  gap: 24px;                /* space between cards */
+  padding: 1rem 10%;        /* side‐padding on desktop */
+  box-sizing: border-box;
+}
+
+#book-services .service-cards.scrollable .pricing-card {
+  /* Desktop card: max 360px wide + glassmorphic styling */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex: 0 0 auto;           /* prevent flex from stretching */
+  max-width: 360px;         /* cap width */
+  padding: 2rem 2rem;       /* horizontal padding on desktop */
+  box-sizing: border-box;   /* include padding in max‐width */
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  min-height: 340px;        /* ensure uniform height */
+}
+
+#book-services .service-cards.scrollable .pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: #c38fa1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#book-services .service-cards.scrollable .pricing-card .service-overlay {
+  background: transparent;
+  color: #2e2e2e;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+#book-services .service-cards.scrollable .pricing-card h3 {
+  font-size: 1.5rem;           /* desktop heading size */
+  line-height: 1.3;
+  word-break: break-word;      /* force-wrap very long titles */
+  margin-bottom: 1rem;         /* extra space under title */
+}
+
+#book-services .service-cards.scrollable .pricing-card .service-detail {
+  font-size: 1.75rem;          /* desktop price size */
+  font-weight: 700;
+  color: #87eaf8;              /* dusty-rose color for price */
+  margin: 0 0 1rem 0;          /* bottom margin for spacing */
+  opacity: 1 !important;
+  max-height: none !important;
+  text-align: center;
+}
+
+#book-services .service-cards.scrollable .pricing-card .btn {
+  background-color: #55dff2;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+#book-services .service-cards.scrollable .pricing-card .btn:hover {
+  background-color: #90cbd3;
+}
+
+/* Scrollbar styling (desktop + mobile) */
+#book-services .service-cards.scrollable {
+  scrollbar-height: thin;
+  scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+#book-services .service-cards.scrollable::-webkit-scrollbar {
+  height: 6px;
+}
+#book-services .service-cards.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+#book-services .service-cards.scrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* ============================================================= */
+/* 2) MOBILE ONLY (≤ 768px) – inline‐block & 80vw cards          */
+/* ============================================================= */
+@media (max-width: 768px) {
+  /* a) Container becomes block with horizontal overflow */
+  #book-services .service-cards.scrollable {
+    display: block !important;       /* remove flex on mobile */
+    white-space: nowrap;             /* force cards onto single row */
+    overflow-x: auto;                /* enable horizontal swipe */
+    -webkit-overflow-scrolling: touch;/* smooth iOS scrolling */
+    padding: 0 5% !important;        /* reduced side-padding on mobile */
+    margin-bottom: 1rem;             /* give space so scroll thumb is visible */
+  }
+
+  /* b) Each card becomes inline-block at ~80vw wide */
+  #book-services .service-cards.scrollable .pricing-card {
+    display: inline-block !important; /* inline so white-space keeps them side by side */
+    vertical-align: top;
+    width: 80vw;           /* occupy ~80% of viewport width */
+    max-width: 80vw;       /* don’t exceed that */
+    margin-right: 16px;    /* small gap to hint “more to scroll” */
+    padding: 1.5rem 1rem !important; /* shrink padding a bit on mobile */
+    box-sizing: border-box;
+  }
+
+  /* c) Last card: remove extra right margin so it doesn’t leave blank space */
+  #book-services .service-cards.scrollable .pricing-card:last-child {
+    margin-right: 0 !important;
+  }
+
+  /* d) Shrink text/heading/button on mobile so nothing overflows */
+  #book-services .service-cards.scrollable .pricing-card h3 {
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  #book-services .service-cards.scrollable .pricing-card .service-detail {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  #book-services .service-cards.scrollable .pricing-card .btn {
+    padding: 10px 20px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ------------------------------------ */
+/* About Us Styles                       */
+/* ------------------------------------ */
+#about {
+  padding: 80px 10%;
+  background: #e0f7fa; /* light baby blue */
+}
+
+#about .container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+#about img {
+  flex: 1 1 280px;
+  max-width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+#about .about-text {
+  flex: 1 1 320px;
+  text-align: left;
+}
+
+#about .btn.outline {
+  background: transparent;
+  border: 2px solid #89c9d3;
+  color: #c3e2e7;
+}
+
+@media (max-width: 768px) {
+  #about .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  #about .about-text {
+    text-align: center;
+  }
+  .pricing-card {
+    max-width: 90%;
+  }
+}
+
+/* ------------------------------------ */
+/* Booking Form Styles                   */
+/* ------------------------------------ */
+#booking h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.booking-form {
+  display: grid;
+  gap: 20px;
+  max-width: 360px;
+  margin: 0 auto 80px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #2e2e2e;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="time"],
+.booking-form .flatpickr-input {
+  margin-top: 6px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.booking-form input[type="text"]:focus,
+.booking-form input[type="email"]:focus,
+.booking-form input[type="time"]:focus,
+.booking-form .flatpickr-input:focus {
+  outline: none;
+  border-color: #89c9d3;
+  box-shadow: 0 0 0 3px rgba(137,201,211,0.2);
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #89c9d3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.booking-form button:hover {
+  background: #6aaeb7;
+}
+
+/* ------------------------------------ */
+/* About Section – Glassmorphic Style   */
+/* ------------------------------------ */
+#about {
+  /* (keep your existing background declaration—this is just the mask part) */
+  background:
+    linear-gradient(rgba(224,247,250,0.6), rgba(224,247,250,0.6)),
+    url('images/ttt.jpg') center/cover no-repeat;
+
+  /* NEW: vertical fade only at top & bottom */
+  -webkit-mask-image: 
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,       /* fully transparent at very top */
+      rgba(0,0,0,1) 10%,      /* solid by 10% down */
+      rgba(0,0,0,1) 90%,      /* remain solid until 90% down */
+      rgba(0,0,0,0) 100%      /* fully transparent at very bottom */
+    );
+  mask-image: 
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,1) 10%,
+      rgba(0,0,0,1) 90%,
+      rgba(0,0,0,0) 100%
+    );
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  padding: 40px 10% 40px; /* (was 80px 10% 40px) */
+}
+
+/* (2) Force the heading and paragraph into separate rows */
+#about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* space between <h2> and <p> */
+  margin-bottom: 2rem; /* pushes the cards down a bit */
+}
+
+#about .section-title {
+  position: relative;
+  z-index: 2;
+  font-size: 2.75rem;
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 0; /* gap handles spacing */
+}
+
+#about .fade-paragraphs {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Force about-paragraph to pure white */
+#about .fade-paragraphs p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #FFFFFF;   /* pure white */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin: 0;
+}
+
+/* ------------------------------------ */
+/* Glassmorphic “cards” underneath      */
+/* ------------------------------------ */
+.about-cards {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 60px;
+  padding: 0 10%;
+  box-sizing: border-box;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  flex: 1 1 220px;
+  min-height: 200px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-card:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+}
+
+.about-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.about-card p {
+  color: #F0F0F0;
+  line-height: 1.6;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .about-cards {
+    gap: 20px;
+  }
+  .about-card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Shrink side-padding on narrow screens */
+  #about {
+    padding: 20px 5% 20px;
+  }
+
+  /* Stack cards in a single column and tighten up the gaps */
+  .about-cards {
+    display: grid; 
+    grid-template-columns: 1fr; /* one-per-row */
+    gap: 1rem;                 /* slightly smaller gap between cards */
+    margin-top: 1.5rem;        /* ensure there's some space above the first card */
+  }
+
+  /* Reduce heading size & spacing for mobile */
+  #about .section-title {
+    font-size: 2rem;       /* was 2.25rem */
+    margin-bottom: 1rem;   /* a bit less space under the heading */
+  }
+
+  /* Reduce paragraph line-height/size for narrow viewports */
+  #about .fade-paragraphs p {
+    font-size: 1rem;       /* was 1.05rem */
+    line-height: 1.6;      /* slightly tighter for small screens */
+  }
+}
+
+/* ------------------------------------ */
+/* Loading Curtain                      */
+/* ------------------------------------ */
+#loading-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e0f7fa; /* light baby blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
+
+.logo-wrapper {
+  text-align: center;
+  color: #2e2e2e;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+}
+
+.logo-text {
+  font-size: 2rem;
+  margin: 20px 0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.line {
+  width: 300px;
+  height: 2px;
+  background-color: #2e2e2e;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------ */
+/* Utility                              */
+/* ------------------------------------ */
+.service-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------------------------ */
+/* MOBILE RESPONSIVENESS OVERRIDES      */
+/* (for screens 768px wide and below)   */
+/* ------------------------------------ */
+@media (max-width: 768px) {
+  /* ----------------------------- */
+  /* 1) HERO SECTION ADJUSTMENTS   */
+  /* ----------------------------- */
+  .hero {
+    /* Swap to a simpler/mobile version of your hero image */
+    background-image: url('images/mobilebg2.png') !important;
+    /* Shrink top/bottom padding so it doesn’t take up too much vertical space */
+    padding: 200px 5% 40px; /* was 290px 10% 80px */
+    background-size: cover;
+    background-position: center;
+  }
+  /* Make the semi‐opaque text panel narrower/taller on mobile */
+  .text-panel {
+    width: 100%;        /* fill almost full width */
+    max-width: 350px;   /* prevent it from stretching too wide */
+    padding: 2rem 1.5rem; /* slightly smaller padding */
+  }
+  /* Shrink headline/subtext for readability on phones */
+  .hero h2 {
+    font-size: 2rem;    /* was 3rem */
+    line-height: 1.2;
+  }
+  .hero p {
+    font-size: 1rem;    /* was 1.25rem */
+    margin-bottom: 20px;
+    color: #ffffff;     /* ensure pure white on mobile */
+  }
+
+  /* ----------------------------- */
+  /* 2) “BOOK WITH US NOW!” CARDS  */
+  /*    (Keep Horizontal Scroll)   */
+  /* ----------------------------- */
+  #book-services .service-cards.scrollable {
+    display: flex;               /* ensure flex container */
+    flex-wrap: nowrap !important;/* do NOT wrap onto multiple lines */
+    overflow-x: auto !important; /* allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* smooth iOS swipe */
+    padding: 0 5%;               /* slightly reduced side-padding */
+    margin-bottom: 1rem;         /* a bit of bottom gap so the scroll thumb is visible */
+  }
+  #book-services .service-cards.scrollable .pricing-card {
+    flex: 0 0 80%;       /* each card is 80% of viewport width */
+    max-width: 80%;      /* don’t exceed 80% */
+    margin-right: 16px;  /* small gap between cards */
+  }
+  /* Remove extra right-margin on the last card */
+  #book-services .service-cards.scrollable .pricing-card:last-child {
+    margin-right: 0;
+  }
+
+  /* ----------------------------------------- */
+  /* 3) FINAL GLASSMORPHIC SECTION (increase contrast) */
+  /* ----------------------------------------- */
+  #about {
+    /* Increase the tint so text sits on a darker/less–busy overlay */
+    background:
+      linear-gradient(
+        rgba(224, 247, 250, 0.75),  /* slightly more opaque */
+        rgba(224, 247, 250, 0.75)
+      ),
+      url('images/blue-water-ripples-circle-069937103_prevstill.webp') center/cover no-repeat;
+    padding: 20px 5% 20px; /* was 40px 10% 40px */
+  }
+  #about .section-title {
+    font-size: 2rem;       /* tighten font size on mobile */
+    margin-bottom: 0.75rem;
+  }
+  #about .fade-paragraphs p {
+    font-size: 1rem;       /* was 1.05rem */
+    line-height: 1.6;      /* slightly tighter */
+    color: #F2F2F2;        /* maintain bright white text */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+    margin: 0 0 1rem 0;    /* give bottom spacing */
+  }
+  /* Stack the glassmorphic cards in a single column */
+  .about-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 5%;
+    margin-bottom: 2rem;
+  }
+  .about-card {
+    flex: none;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  /* ----------------------------- */
+  /*  Pricing‐Card (mobile shrink)  */
+  /* ----------------------------- */
+  .pricing-card {
+    padding: 1.5rem 1rem;         /* less padding on very narrow screens */
+    max-width: 80vw !important;   /* each card ~80% of viewport width */
+  }
+  .pricing-card .service-overlay h3 {
+    font-size: 1.2rem;           /* smaller heading on mobile */
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .pricing-card .service-detail {
+    font-size: 1.3rem;           /* slightly smaller price label */
+    margin-bottom: 0.75rem;
+  }
+  .pricing-card .btn {
+    padding: 10px 20px;          /* a bit smaller button */
+    font-size: 0.95rem;
+  }
+}
+
+/* ------------------------------------ */
+/* FORCE HORIZONTAL SCROLL ON MOBILE    */
+/* (Override existing flex-wrap rules)  */
+/* ------------------------------------ */
+@media (max-width: 768px) {
+  /* 1) Make the container a block with horizontal overflow */
+  #book-services .service-cards.scrollable {
+    display: block !important;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth iOS swipe */
+    padding: 0 5% !important;         /* match your mobile side-padding */
+    margin-bottom: 1rem;              /* ensure scroll thumb is visible */
+  }
+
+  /* 2) Each card becomes inline-block at 80% width, with right margin except last */
+  #book-services .service-cards.scrollable .pricing-card {
+    display: inline-block !important;
+    vertical-align: top;
+    width: 80vw;                    /* roughly 80% of viewport width */
+    max-width: 80vw;
+    margin-right: 16px;             /* small gap between cards */
+  }
+
+  /* 3) Remove extra right margin on the very last card */
+  #book-services .service-cards.scrollable .pricing-card:last-child {
+    margin-right: 0 !important;
+  }
+}
+
+.about-intro-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Portfolio & Highlights Section */
+#portfolio {
+  background-color: #dff7fa;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+/* Section Title */
+#portfolio h2 {
+  color: #000000;      /* Gold accent */
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+/* Image Grid */
+#portfolio .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;      /* Center the grid container */
+  padding: 0 1rem;
+}
+
+#portfolio .grid img {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto;      /* Center each image if it’s smaller */
+}
+
+/* View All Button */
+#portfolio .view-all-button {
+  display: inline-block;
+  margin: 2rem auto 0;  /* Center button and give top spacing */
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#portfolio .view-all-button:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.mt-10 {
+    padding: 3rem 10% 1rem;
+}

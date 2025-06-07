@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosah's Hair</title>
+  <meta name="description" content="We specialize in advanced aesthetic treatments designed to renew, restore, and reveal your best skin." />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Flatpickr datepicker CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <style>
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .scroll-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scrollLeft 40s linear infinite;
+    }
+    .testimonial-card {
+      display: inline-block;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      width: 400px;
+      margin-right: 2rem;
+      vertical-align: top;
+      white-space: normal;
+    }
+    #testimonial-wrapper:hover .scroll-track {
+      animation-play-state: paused;
+    }
+    @media (max-width: 600px) {
+      .testimonial-card {
+        width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading-curtain">
+    <div class="logo-wrapper">
+      <div class="line"></div>
+      <div class="logo-text">Rosah's Hair</div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="/index.html" class="logo">Rosah's Hair</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#about">About</a>
+        <a href="#booking">Contact</a>
+      </nav>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+  </header>
+
+  <section
+    class="hero"
+    id="hero"
+    style="background-image: url('images/upscaled.png');"
+  >
+    <div class="fade-overlay"></div>
+    <div class="hero-content">
+      <div class="text-panel">
+        <h2>Where Style Meets Confidence</h2>
+        <p>
+          Birmingham’s go-to hair studio for clean parts, bold looks,
+           and styles that speak before you do.
+        </p>
+        <a href="#booking" class="btn">Book Your Style</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Featured Styles</h2>
+    <div class="service-cards">
+      <!-- Laser Hair Removal -->
+      <a
+        href="#"
+        class="service-card service-link"
+        style="background-image:url('images/1.png')"
+      >
+        <div class="service-overlay">
+          <h3>Cornrows</h3>
+          <p class="service-detail">
+            Clean, traditional rows—tailored for any occasion.
+          </p>
+        </div>
+      </a>
+
+      <!-- Laser Tattoo Removal -->
+      <a
+        href="#"
+        class="service-card service-link"
+        style="background-image:url('images/2.png')"
+      >
+        <div class="service-overlay">
+          <h3>Knotless Braids</h3>
+          <p class="service-detail">
+            Lightweight, natural, and tension-free from the first part.
+          </p>
+        </div>
+      </a>
+
+      <!-- Microneedling -->
+      <a
+        href="#"
+        class="service-card service-link"
+        style="background-image:url('images/3.png')"
+      >
+        <div class="service-overlay">
+          <h3>Twists</h3>
+          <p class="service-detail">
+            Simple, defined, and protective—styled with care.
+          </p>
+        </div>
+      </a>
+
+      <!-- Medical Grade Facials -->
+      <a
+        href="#"
+        class="service-card service-link"
+        style="background-image:url('images/4.png')"
+      >
+        <div class="service-overlay">
+          <h3>Ponytails</h3>
+          <p class="service-detail">
+            Deep-cleansing, customizable facials tailored to your skin’s needs.
+          </p>
+        </div>
+      </a>
+
+  </section>
+
+  <section id="testimonials" style="background-color: #99e9f4; padding: 4rem 0;">
+    <h2 class="section-title text-center mb-10">What Clients Say</h2>
+    <div
+      id="testimonial-wrapper"
+      style="overflow: hidden; position: relative; white-space: nowrap;"
+    >
+      <div id="testimonial-track" class="scroll-track">
+        <div class="testimonial-card">
+          “Rosah took my hair from damaged to dazzling. My braids lasted longer than I expected, and my edges are still intact.”
+        </div>
+        <div class="testimonial-card">“Always pleasurable”</div>
+        <div class="testimonial-card">
+          “I’ve never felt more confident. The knotless braids were light as air and looked immaculate for weeks.”
+        </div>
+        <div class="testimonial-card">
+          “Rosah’s butterfly bob turned heads at my event. Clean, bold, and perfectly shaped.”
+        </div>
+        <div class="testimonial-card">
+          “Professional, punctual, and precise. My faux locs came out seamless—10/10 would recommend.”
+        </div>
+        <div class="testimonial-card">
+          “I always leave Rosah’s chair feeling cared for. Her twist styles are defined and last so long.”
+        </div>
+        <div class="testimonial-card">
+          “Finally, someone who listens. She gave me the exact ponytail look I described—flawlessly.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────────────────
+       Gallery Section
+       ──────────────────────────────────────────────────────────────────── -->
+<section id="portfolio" class="bg-black text-center py-16">
+  <!-- Section Title -->
+  <h2 class="text-4xl font-bold text-yellow-400 mb-8">Portfolio &amp; Highlights</h2>
+
+  <!-- Image Grid -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+    <div><img src="images/3.png" alt="Style 1" class="w-full rounded-lg shadow-lg"></div>
+    <div><img src="images/2.png" alt="Style 2" class="w-full rounded-lg shadow-lg"></div>
+    <div><img src="images/4.png" alt="Style 3" class="w-full rounded-lg shadow-lg"></div>
+    <div><img src="images/1.png" alt="Style 4" class="w-full rounded-lg shadow-lg"></div>
+  </div>
+
+  <!-- View All Button -->
+  <div class="mt-10">
+    <a href="#" class="btn">
+      View All
+    </a>
+  </div>
+</section>
+
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="floral-overlay"></div>
+      <h2 class="section-title typewriter-text" id="typewriter-text">Protect. Style. Empower.</h2>
+      <div class="divider"></div>
+<div class="about-intro-card">
+  <p>
+    At Rosah’s Hair, we specialize in modern, protective braid styles that help you feel confident, polished, and seen. Our services include knotless braids, cornrows, faux locs, twists, and more—each styled with precision, care, and attitude. Every look is customized to suit your hair type, vibe, and lifestyle.
+  </p>
+</div>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <h3>Craftsmanship</h3>
+        <p class="card-front">Years of hands-on experience.</p>
+        <p class="card-back">Rosah delivers every part with care, focus, and consistency—no shortcuts, ever.</p>
+      </div>
+      <div class="about-card">
+        <h3>Precision</h3>
+        <p class="card-front">Neat. Clean. Lasting.</p>
+        <p class="card-back">Every style is designed to stay fresh longer, with minimal tension and a flawless finish.</p>
+      </div>
+      <div class="about-card">
+        <h3>Bold Expression</h3>
+        <p class="card-front">You’re not just getting your hair done.</p>
+        <p class="card-back">Whether it’s a butterfly bob or Fulani braids, we keep it stylish, current, and rooted in culture.</p>
+      </div>
+      <div class="about-card">
+        <h3>Real Care</h3>
+        <p class="card-front">Holistic approach.</p>
+        <p class="card-back">You’re being looked after. We treat your scalp, protect your edges, and respect your time.</p>
+      </div>`
+    </div>
+  </section>
+
+  <section id="booking">
+    <h1 class="section-title">Book Your Appointment</h1>
+    <form name="booking" method="POST" data-netlify="true" class="booking-form">
+      <input type="hidden" name="form-name" value="booking" />
+      <label>Your Name<input type="text" name="name" /></label>
+      <label>Your Email<input type="email" name="email" /></label>
+      <label>Choose Date<input
+          type="text"
+          id="date-input"
+          name="date"
+          placeholder="Select a date"
+          readonly
+        /></label>
+      <label>Choose Time<input type="time" name="time" /></label>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rosah’s Hair. All rights reserved.</p>
+    <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;">
+      Site created as a preview by 
+      <a
+        href="https://www.pinnacle-sites.com"
+        target="_blank"
+        style="color: inherit; text-decoration: underline;"
+      >
+        Pinnacle Sites
+      </a
+      >.Rosah's Hair is a prospective brand for demonstration purposes.
+    </p>
+  </footer>
+
+  <script>
+    // Mobile nav logic
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Date picker
+    flatpickr("#date-input", {
+      altInput: true,
+      altFormat: "F j, Y",
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      disableMobile: "true"
+    });
+
+    // Testimonials scroll logic
+    const track = document.getElementById('testimonial-track');
+    let isPaused = false;
+    document.getElementById('testimonial-wrapper').addEventListener('wheel', () => {
+      track.style.animationPlayState = 'paused';
+      clearTimeout(isPaused);
+      isPaused = setTimeout(() => {
+        track.style.animationPlayState = 'running';
+      }, 2000);
+    });
+    document.getElementById('testimonial-wrapper').addEventListener('mouseenter', () => {
+      track.style.animationPlayState = 'paused';
+    });
+    document.getElementById('testimonial-wrapper').addEventListener('mouseleave', () => {
+      track.style.animationPlayState = 'running';
+    });
+
+    // Typewriter Effect (no repeat) + Reveal paragraphs
+    const typewriter = document.getElementById('typewriter-text');
+    const paragraphs = document.getElementById('about-paragraphs');
+    const text = "Protect. Style. Empower.";
+    let index = 0;
+    function typeOnce() {
+      if (index <= text.length) {
+        typewriter.innerHTML = text.substring(0, index++);
+        setTimeout(typeOnce, 100);
+      } else {
+        paragraphs.style.opacity = 1;
+      }
+    }
+    typeOnce();
+
+    // Loading-curtain fade
+    window.addEventListener("load", function () {
+      const curtain = document.getElementById("loading-curtain");
+      setTimeout(() => {
+        curtain.style.opacity = "0";
+        setTimeout(() => {
+          curtain.style.display = "none";
+        }, 600);
+      }, 1200);
+    });
+  </script>
+  <script>
+  // As soon as the page loads, check if we're on a narrow screen
+  function enableBookingHorizontalScroll() {
+    if (window.innerWidth <= 768) {
+      const container = document.querySelector(
+        "#book-services .service-cards.scrollable"
+      );
+      if (!container) return;
+
+      // Force single-row flex + horizontal overflow
+      container.style.display = "flex";
+      container.style.flexWrap = "nowrap";
+      container.style.overflowX = "auto";
+      container.style.webkitOverflowScrolling = "touch";
+      container.style.paddingLeft = "5%";
+      container.style.paddingRight = "5%";
+
+      // Make sure each card stays 80% of viewport width with a right gap
+      const cards = container.querySelectorAll(".pricing-card");
+      cards.forEach((card, idx) => {
+        card.style.flex = "0 0 80%";
+        card.style.maxWidth = "80%";
+        // give every card except the last a right margin
+        if (idx < cards.length - 1) {
+          card.style.marginRight = "16px";
+        } else {
+          card.style.marginRight = "0";
+        }
+      });
+    }
+  }
+
+  window.addEventListener("load", enableBookingHorizontalScroll);
+  window.addEventListener("resize", enableBookingHorizontalScroll);
+</script>
+
+</body>
+</html>
